@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import Navbar from '../../components/Navbar';
 import Body from '../../components/Body';
+import Discover from '../Discover';
 
 const DRAWER_WIDTH = 275;
 
@@ -12,7 +13,9 @@ export default function Dashboard() {
     <Box display="flex">
       <CssBaseline />
       <Navbar drawerWidth={DRAWER_WIDTH} />
-      <Body drawerWidth={DRAWER_WIDTH} />
+      <Body drawerWidth={DRAWER_WIDTH}>
+        <Discover />
+      </Body>
     </Box>
   );
 }
