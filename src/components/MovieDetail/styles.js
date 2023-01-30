@@ -1,14 +1,15 @@
 export const styles = {
   cardContainer: {
-    display: 'flex',
+    display: { xs: 'block', sm: 'flex' },
     width: '100%',
-    height: 389,
+    height: { xs: '100%', sm: 389 },
     backgroundColor: '#394B61',
     borderRadius: '11px',
+    paddingBottom: { xs: 1, sm: 0 },
   },
   cardMedia: {
-    width: 349,
-    height: '100%',
+    width: { xs: '100%', sm: 349 },
+    height: { xs: '200px', sm: '100%' },
     objectFit: 'cover',
   },
   cardContent: {

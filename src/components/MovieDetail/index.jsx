@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -25,8 +25,17 @@ export default function MovieDetail({
     return Number(imdbRating) ? (imdbRating / 10) * 100 : 0;
   };
 
+  useEffect(() => {
+    const container = document.getElementById('movieDetail');
+    container.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'nearest',
+    });
+  }, [title]);
+
   return (
-    <Card sx={styles.cardContainer}>
+    <Card id="movieDetail" sx={styles.cardContainer}>
       <CardMedia
         component="img"
         sx={styles.cardMedia}
@@ -34,7 +43,7 @@ export default function MovieDetail({
         alt="Live from space album cover"
       />
       <Box sx={{ width: '100%' }}>
-        <Box sx={{ ml: 3 }}>
+        <Box sx={{ ml: { xs: 'none', sm: 3 } }}>
           <CardContent sx={styles.cardContent}>
             <Typography sx={styles.title} component="div" variant="h5">
               {title}

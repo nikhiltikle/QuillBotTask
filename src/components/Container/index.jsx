@@ -8,6 +8,7 @@ export default function Container({ drawerWidth, children }) {
       sx={{
         flexGrow: 1,
         px: { xs: '15px', sm: '48px' },
+        pb: 2,
         width: { sm: `calc(100% - ${drawerWidth}px)` },
       }}
     >
