@@ -1,4 +1,7 @@
 # QuillBot-task
+Along with the UI, the search functionality is working based on movie name.
+The UI is responsive on smaller screen sizes.
+The live working demo can be found at https://madhavkabra.github.io/QuillBotTask/
 
 ## Available Scripts
 
