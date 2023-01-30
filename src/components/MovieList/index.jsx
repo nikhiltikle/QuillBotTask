@@ -4,10 +4,9 @@ import Typography from '@mui/material/Typography';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { styles, SvgCardButton } from './styles';
-import movies from '../../__mock__/movies/movies.json';
 import MovieDetail from '../MovieDetail';
 
-export default function MovieList() {
+export default function MovieList({ movies }) {
   const [selectedMovie, setMovie] = useState({});
 
   const classes = styles();

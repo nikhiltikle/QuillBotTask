@@ -10,9 +10,25 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grow from '@mui/material/Grow';
 import ClearIcon from '@mui/icons-material/Clear';
 import MovieList from '../../components/MovieList';
+import movies from '../../__mock__/movies/movies.json';
 
 export default function Discover() {
   const [checked, setChecked] = React.useState(false);
+  const [moviesData, setMoviesData] = React.useState(movies);
+
+  const handleSearch = (event) => {
+    const filterData = movies.filter((f) => {
+      if (event.target.value === '') return f;
+      return f.Title.toLowerCase().includes(event.target.value.toLowerCase());
+    });
+
+    setMoviesData(filterData);
+  };
+
+  const onCancelSearch = () => {
+    setMoviesData(movies);
+    setChecked(false);
+  };
 
   return (
     <>
@@ -32,7 +48,9 @@ export default function Discover() {
             >
               <TextField
                 fullWidth
+                autoFocus
                 placeholder="Title, Movies, Keyword"
+                onChange={handleSearch}
                 sx={{
                   maxWidth: '567px',
                   '& .MuiInputBase-root': {
@@ -50,7 +68,7 @@ export default function Discover() {
 
                   endAdornment: (
                     <InputAdornment>
-                      <IconButton onClick={() => setChecked((prev) => !prev)}>
+                      <IconButton onClick={onCancelSearch}>
                         <ClearIcon fontSize="small" />
                       </IconButton>
                     </InputAdornment>
@@ -76,7 +94,7 @@ export default function Discover() {
         </Grid>
       </Grid>
 
-      <MovieList />
+      <MovieList movies={moviesData} />
     </>
   );
 }
