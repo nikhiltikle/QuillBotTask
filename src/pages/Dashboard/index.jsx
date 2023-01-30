@@ -3,7 +3,7 @@ import Box from '@mui/system/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import Navbar from '../../components/Navbar';
-import Body from '../../components/Body';
+import Container from '../../components/Container';
 import Discover from '../Discover';
 import movies from '../../__mock__/movies/movies.json';
 
@@ -34,7 +34,7 @@ export default function Dashboard() {
     <Box display="flex">
       <CssBaseline />
       <Navbar drawerWidth={DRAWER_WIDTH} onClickProfileAvatar={resetData} />
-      <Body drawerWidth={DRAWER_WIDTH}>
+      <Container drawerWidth={DRAWER_WIDTH}>
         <Discover
           movies={moviesData}
           onSearchMovie={handleSearch}
@@ -44,7 +44,7 @@ export default function Dashboard() {
           setSelectedMovie={setSelectedMovie}
           selectedMovie={selectedMovie}
         />
-      </Body>
+      </Container>
     </Box>
   );
 }

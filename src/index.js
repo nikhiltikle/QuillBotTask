@@ -1,8 +1,7 @@
-import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from '@mui/material';
-import { theme } from './theme/mui/theme';
+import { theme } from './theme';
 import Dashboard from './pages/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

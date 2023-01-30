@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 
-export default function Body({ drawerWidth, children }) {
+export default function Container({ drawerWidth, children }) {
   return (
     <Box
       component="main"
