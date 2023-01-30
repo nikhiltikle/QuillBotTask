@@ -41,7 +41,7 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: `${CARDS_GAP}px 26px`,
+        gap: { xs: '10px 8px', sm: '37px 26px' },
         width: '100%',
       }}
       id="moviesList"
@@ -77,6 +77,7 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
           onClick={() => onSelectMovie(movie, index)}
         >
           <CardMedia
+            component="img"
             sx={styles.image}
             image={movie.Poster}
             title={movie.Title}

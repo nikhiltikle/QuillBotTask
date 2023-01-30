@@ -31,7 +31,14 @@ export default function Discover({
   return (
     <>
       <Grid container marginBottom="39px" marginTop="42px">
-        <Grid item xs={6}>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          sx={{
+            marginTop: { xs: '30px', sm: 'auto' },
+          }}
+        >
           {!openSearchField ? (
             <Box sx={{ height: '55px', display: 'flex', alignItems: 'center' }}>
               <IconButton onClick={() => setOpenSearchField((prev) => !prev)}>
@@ -82,6 +89,7 @@ export default function Discover({
           item
           xs={6}
           justifyContent="end"
+          sx={{ display: { xs: 'none', sm: 'flex' } }}
         >
           <IconButton>
             <WbSunnyIcon fontSize="medium" />

@@ -1,16 +1,15 @@
 export const styles = {
   mainCard: {
-    height: 278,
+    height: { xs: 240, sm: 278 },
     width: 176,
     backgroundColor: '#394B61',
     borderRadius: '11px',
-    padding: '1px',
     cursor: 'pointer',
+    padding: 1,
   },
   image: {
-    height: 188,
-    width: 157,
-    margin: 1,
+    height: { xs: 150, sm: 188 },
+    width: '100%',
     borderRadius: '6px',
     objectFit: 'cover',
   },
@@ -30,10 +29,10 @@ export const styles = {
     display: '-webkit-box',
     WebkitLineClamp: '1',
     WebkitBoxOrient: 'vertical',
-    pl: 1,
+    pt: 1,
   },
   cardActions: {
-    paddingLeft: '8px',
+    pl: 0,
     mt: 1,
   },
 };
