@@ -8,7 +8,8 @@ export const styles = () => ({
   },
   cardMedia: {
     width: 349,
-    height: 496,
+    height: '100%',
+    objectFit: 'cover',
   },
   cardContent: {
     color: '#D4D7DD',

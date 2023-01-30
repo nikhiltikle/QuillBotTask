@@ -88,5 +88,12 @@ export const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Open sans, sans-serif',
+        },
+      },
+    },
   },
 });

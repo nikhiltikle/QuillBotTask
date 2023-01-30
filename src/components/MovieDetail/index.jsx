@@ -190,19 +190,26 @@ export default function MovieDetail({
           <CardActions>
             <Button
               sx={{
-                background: ' #00E0FF',
+                background: '#00E0FF',
                 borderRadius: '5px',
                 width: '154px',
                 height: '38px',
+                fontWeight: 700,
+                fontSize: '16px',
+                lineHeight: '162%',
+                color: '#000000',
+                textTransform: 'capitalize',
+
+                ':hover': {
+                  backgroundColor: '#00E0FF',
+                  opacity: 0.7,
+                },
               }}
-              size="small"
-              color="primary"
             >
-              <Typography sx={{ color: '#000000' }}>Play Movie</Typography>
+              Play Movie
             </Button>
             <Button
               sx={{
-                // color: "#000000",
                 background: '#394B61',
                 border: '1px solid #00E0FF',
                 borderRadius: '5px',
@@ -210,18 +217,14 @@ export default function MovieDetail({
                 width: '154px',
                 height: '38px',
                 textAlign: 'center',
+                color: '#00E0FF',
+                fontWeight: 700,
+                fontSize: '16px',
+                lineHeight: '162%',
+                textTransform: 'capitalize',
               }}
-              // size="small"
-              color="primary"
             >
-              <Typography
-                fontWeight={700}
-                fontSize={16}
-                lineHeight={26}
-                // color={"#00E0FF"}
-              >
-                Watch Trailer
-              </Typography>
+              Watch Trailer
             </Button>
           </CardActions>
         </Box>
