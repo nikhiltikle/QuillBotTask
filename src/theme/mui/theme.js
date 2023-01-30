@@ -71,5 +71,22 @@ export const theme = createTheme({
         },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          height: '55px',
+          backgroundColor: '#1A2536',
+          color: '#ffffff',
+          outline: 'none',
+          borderRadius: '8px !important',
+          fontFamily: 'Open sans, sans-serif',
+
+          '& fieldset': {
+            outline: 'none',
+            border: 'none',
+          },
+        },
+      },
+    },
   },
 });

@@ -4,13 +4,12 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Grow } from '@mui/material';
-import { CleaningServicesOutlined } from '@mui/icons-material';
+import Grow from '@mui/material/Grow';
+import ClearIcon from '@mui/icons-material/Clear';
 
 export default function Body({ drawerWidth }) {
   const [checked, setChecked] = React.useState(false);
@@ -20,39 +19,46 @@ export default function Body({ drawerWidth }) {
       component="main"
       sx={{
         flexGrow: 1,
-        p: 3,
+        px: 3,
         width: { sm: `calc(100% - ${drawerWidth}px)` },
       }}
     >
-      <Toolbar />
-      <Grid container marginBottom="50px" marginTop="-15px">
+      <Grid container marginBottom="39px" marginTop="42px">
         <Grid item xs={6}>
           {!checked ? (
-            <IconButton onClick={() => setChecked((prev) => !prev)}>
-              <SearchIcon />
-            </IconButton>
+            <Box sx={{ height: '55px', display: 'flex', alignItems: 'center' }}>
+              <IconButton onClick={() => setChecked((prev) => !prev)}>
+                <SearchIcon fontSize="medium" />
+              </IconButton>
+            </Box>
           ) : (
             <Grow
               in={checked}
-              orientation="horizontal"
-              style={{ transformOrigin: '0 0 0' }}
-              {...(checked ? { timeout: 1000 } : {})}
+              style={{ transformOrigin: '0' }}
+              {...(checked ? { timeout: 1100 } : {})}
             >
               <TextField
                 fullWidth
+                placeholder="Title, Movies, Keyword"
+                sx={{
+                  maxWidth: '567px',
+                  '& .MuiInputBase-root': {
+                    fontSize: '21px',
+                    fontWeight: 600,
+                    lineHeight: '210%',
+                  },
+                }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment>
-                      <IconButton>
-                        <SearchIcon />
-                      </IconButton>
+                      <SearchIcon sx={{ marginRight: '12px' }} />
                     </InputAdornment>
                   ),
 
                   endAdornment: (
                     <InputAdornment>
                       <IconButton onClick={() => setChecked((prev) => !prev)}>
-                        <CleaningServicesOutlined />
+                        <ClearIcon fontSize="small" />
                       </IconButton>
                     </InputAdornment>
                   ),
@@ -69,10 +75,10 @@ export default function Body({ drawerWidth }) {
           justifyContent="end"
         >
           <IconButton>
-            <WbSunnyIcon />
+            <WbSunnyIcon fontSize="medium" />
           </IconButton>
           <IconButton>
-            <MoreVertIcon />
+            <MoreVertIcon fontSize="medium" />
           </IconButton>
         </Grid>
       </Grid>
