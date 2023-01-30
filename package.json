@@ -2,7 +2,7 @@
   "name": "quill-bot-task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Madhavkabra.github.io/QuillBotTask",
+  "homepage": "http://nikhiltikle.github.io/QuillBot_FE_Task",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
