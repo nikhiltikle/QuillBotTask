@@ -5,10 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Zoom from '@mui/material/Zoom';
 import Typography from '@mui/material/Typography';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import { keyframes } from '@emotion/react';
 
 import MovieDetail from '../MovieDetail';
 import { styles } from './styles';
@@ -36,6 +36,15 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
     setSelectedMovie(movie);
   };
 
+  const movieDetailAnimation = keyframes`
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  `;
+
   return (
     <Box
       sx={{
@@ -47,20 +56,25 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
       id="moviesList"
     >
       {selectedMovie?.imdbID && (
-        <Zoom key={selectedMovie?.imdbID} in timeout={800}>
-          <Box sx={{ flex: '1 1 100%', order: movieDetailOrder }}>
-            <MovieDetail
-              title={selectedMovie.Title}
-              images={selectedMovie.Poster}
-              runTime={selectedMovie.Runtime}
-              year={selectedMovie.Year}
-              directedBy={selectedMovie.Director}
-              language={selectedMovie.Language}
-              plot={selectedMovie.Plot}
-              imdbRating={selectedMovie.imdbRating}
-            />
-          </Box>
-        </Zoom>
+        <Box
+          key={selectedMovie?.imdbID}
+          sx={{
+            flex: '1 1 100%',
+            order: movieDetailOrder,
+            animation: `${movieDetailAnimation} .8s`,
+          }}
+        >
+          <MovieDetail
+            title={selectedMovie.Title}
+            images={selectedMovie.Poster}
+            runTime={selectedMovie.Runtime}
+            year={selectedMovie.Year}
+            directedBy={selectedMovie.Director}
+            language={selectedMovie.Language}
+            plot={selectedMovie.Plot}
+            imdbRating={selectedMovie.imdbRating}
+          />
+        </Box>
       )}
       {movies.map((movie, index) => (
         <Card

@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Grow from '@mui/material/Grow';
+import { keyframes } from '@emotion/react';
 
 import ClearIcon from '@mui/icons-material/Clear';
 import MovieList from '../../components/MovieList';
@@ -28,6 +28,15 @@ export default function Discover({
     resetMovies();
   };
 
+  const searchMovieInputAnimation = keyframes`
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  `;
+
   return (
     <>
       <Grid container marginBottom="39px" marginTop="42px">
@@ -46,11 +55,7 @@ export default function Discover({
               </IconButton>
             </Box>
           ) : (
-            <Grow
-              in={openSearchField}
-              style={{ transformOrigin: '0' }}
-              {...(openSearchField ? { timeout: 1100 } : {})}
-            >
+            <Box sx={{ animation: `${searchMovieInputAnimation} .4s` }}>
               <TextField
                 fullWidth
                 autoFocus
@@ -80,7 +85,7 @@ export default function Discover({
                   ),
                 }}
               />
-            </Grow>
+            </Box>
           )}
         </Grid>
         <Grid
