@@ -10,6 +10,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grow from '@mui/material/Grow';
 import ClearIcon from '@mui/icons-material/Clear';
 import MovieList from '../../components/MovieList';
+import NotFound from '../../components/NotFound';
 
 export default function Discover({
   movies,
@@ -19,7 +20,7 @@ export default function Discover({
   setOpenSearchField,
 }) {
   const onCancelSearch = () => {
-    openSearchField(false);
+    setOpenSearchField(false);
     resetMovies();
   };
 
@@ -87,7 +88,11 @@ export default function Discover({
         </Grid>
       </Grid>
 
-      <MovieList movies={movies} />
+      {Boolean(movies.length) ? (
+        <MovieList movies={movies} />
+      ) : (
+        <NotFound>No results found for your search.</NotFound>
+      )}
     </>
   );
 }
