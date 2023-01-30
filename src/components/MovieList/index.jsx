@@ -52,6 +52,7 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
         flexWrap: 'wrap',
         gap: { xs: '10px 8px', sm: '37px 26px' },
         width: '100%',
+        justifyContent: { sx: 'space-evenly', sm: 'none' },
       }}
       id="moviesList"
     >

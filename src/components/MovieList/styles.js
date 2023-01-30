@@ -1,7 +1,7 @@
 export const styles = {
   mainCard: {
     height: { xs: 240, sm: 278 },
-    width: { xs: 150, sm: 176 },
+    width: { xs: '48.5%', sm: 176 },
     backgroundColor: '#394B61',
     borderRadius: '11px',
     cursor: 'pointer',
