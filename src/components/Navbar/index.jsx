@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 
 import NavigationDrawer from '../NavigationDrawer';
 
-export default function Navbar({ drawerWidth }) {
+export default function Navbar({ drawerWidth, onClickProfileAvatar }) {
   const [openMobileDrawer, setOpenMobileDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -18,6 +18,7 @@ export default function Navbar({ drawerWidth }) {
         drawerWidth={drawerWidth}
         toggleDrawer={toggleDrawer}
         openMobileDrawer={openMobileDrawer}
+        onClickProfileAvatar={onClickProfileAvatar}
       />
     </Box>
   );

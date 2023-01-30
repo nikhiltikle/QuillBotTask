@@ -37,7 +37,7 @@ const list3 = [
   { name: 'Logout', component: LogoutIcon },
 ];
 
-export default function NavigationList() {
+export default function NavigationList({ onClickProfileAvatar }) {
   return (
     <>
       <Box
@@ -48,7 +48,11 @@ export default function NavigationList() {
         alignItems="center"
         gap="1rem"
       >
-        <Avatar src={AvatarImage} sx={{ height: '91px', width: '91px' }} />
+        <Avatar
+          onClick={onClickProfileAvatar}
+          src={AvatarImage}
+          sx={{ height: '91px', width: '91px', cursor: 'pointer' }}
+        />
         <Typography fontSize="20px" fontWeight="600">
           Eric Hoffman
         </Typography>

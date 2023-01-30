@@ -19,71 +19,57 @@ export default function MovieList({ movies }) {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'row',
         flexWrap: 'wrap',
         gap: '37px 26px',
-        // width: '100%',
-        position: 'relative',
+        width: '100%',
       }}
     >
       {movies.map((movie, index) => (
-        <Box key={index}>
-          <Box
-            sx={{
-              display:
-                selectedMovie?.imdbID === movie?.imdbID ? 'block' : 'none',
-              height: '500px',
-            }}
-          >
-            <Box
-              sx={{
-                ':after': {
-                  content: '""',
-                  display: 'block',
-                  position: 'relative',
-                  height: '200px',
-                  background: 'red',
-                  width: '100%',
-                  left: 0,
-                },
-              }}
-            >
-              <Box>{/* <MovieDetail /> */}</Box>
-            </Box>
-          </Box>
-
-          <Box>
-            <Card
-              sx={{ ...classes.mainCard }}
-              onClick={() => onSelectMovie(movie)}
-            >
-              <CardMedia
-                sx={classes.image}
-                image={movie.Poster}
+        <>
+          {selectedMovie?.imdbID === movie?.imdbID && (
+            <Box sx={{ flex: '1 1 100%' }}>
+              <MovieDetail
                 title={movie.Title}
+                images={movie.Poster}
+                runTime={movie.Runtime}
+                year={movie.Year}
+                directedBy={movie.Director}
+                language={movie.Language}
+                plot={movie.Plot}
+                imdbRating={movie.imdbRating}
               />
-              <CardContent sx={classes.cardContent}>
-                <Typography
-                  sx={classes.contentTitle}
-                  gutterBottom
-                  variant="body1"
-                  component="div"
-                >
-                  {movie.Title}
-                </Typography>
-              </CardContent>
-              <CardActions sx={classes.cardActions}>
-                <SvgCardButton>
-                  <PlayCircleOutlineIcon />
-                </SvgCardButton>
+            </Box>
+          )}
+          <Card
+            sx={{ ...classes.mainCard }}
+            onClick={() => onSelectMovie(movie)}
+          >
+            <CardMedia
+              sx={classes.image}
+              image={movie.Poster}
+              title={movie.Title}
+            />
+            <CardContent sx={classes.cardContent}>
+              <Typography
+                sx={classes.contentTitle}
+                gutterBottom
+                variant="body1"
+                component="div"
+              >
+                {movie.Title}
+              </Typography>
+            </CardContent>
+            <CardActions sx={classes.cardActions}>
+              <SvgCardButton>
+                <PlayCircleOutlineIcon />
+              </SvgCardButton>
 
-                <SvgCardButton>
-                  <ControlPointIcon />
-                </SvgCardButton>
-              </CardActions>
-            </Card>
-          </Box>
-        </Box>
+              <SvgCardButton>
+                <ControlPointIcon />
+              </SvgCardButton>
+            </CardActions>
+          </Card>
+        </>
       ))}
     </Box>
   );

@@ -8,6 +8,7 @@ export default function NavigationDrawer({
   drawerWidth,
   openMobileDrawer,
   toggleDrawer,
+  onClickProfileAvatar,
 }) {
   const container =
     window !== undefined ? () => window.document.body : undefined;
@@ -33,7 +34,7 @@ export default function NavigationDrawer({
           },
         }}
       >
-        <NavigationList />
+        <NavigationList onClickProfileAvatar={onClickProfileAvatar} />
       </Drawer>
       <Drawer
         variant="permanent"
@@ -46,7 +47,7 @@ export default function NavigationDrawer({
         }}
         open
       >
-        <NavigationList />
+        <NavigationList onClickProfileAvatar={onClickProfileAvatar} />
       </Drawer>
     </Box>
   );
