@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -97,3 +98,7 @@ export default function NavigationList({ onClickProfileAvatar }) {
     </>
   );
 }
+
+NavigationList.propTypes = {
+  onClickProfileAvatar: PropTypes.func,
+};

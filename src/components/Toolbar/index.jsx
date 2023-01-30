@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
@@ -30,3 +31,8 @@ export default function Toolbar({ drawerWidth, toggleDrawer }) {
     </Box>
   );
 }
+
+Toolbar.propTypes = {
+  drawerWidth: PropTypes.number,
+  toggleDrawer: PropTypes.func,
+};

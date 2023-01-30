@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -99,3 +100,9 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
     </Box>
   );
 }
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object),
+  setSelectedMovie: PropTypes.func,
+  selectedMovie: PropTypes.object,
+};

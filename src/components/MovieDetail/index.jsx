@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -19,19 +20,13 @@ export default function MovieDetail({
   plot,
   year,
   imdbRating,
-  sx,
 }) {
   const getRating = () => {
     return Number(imdbRating) ? (imdbRating / 10) * 100 : 0;
   };
 
   return (
-    <Card
-      sx={{
-        ...sx,
-        ...styles.cardContainer,
-      }}
-    >
+    <Card sx={styles.cardContainer}>
       <CardMedia
         component="img"
         sx={styles.cardMedia}
@@ -229,3 +224,14 @@ export default function MovieDetail({
     </Card>
   );
 }
+
+MovieDetail.propTypes = {
+  title: PropTypes.string,
+  images: PropTypes.string,
+  runTime: PropTypes.string,
+  directedBy: PropTypes.string,
+  language: PropTypes.string,
+  plot: PropTypes.string,
+  year: PropTypes.string,
+  imdbRating: PropTypes.string,
+};

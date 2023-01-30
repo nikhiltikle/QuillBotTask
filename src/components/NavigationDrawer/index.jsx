@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 
@@ -52,3 +53,10 @@ export default function NavigationDrawer({
     </Box>
   );
 }
+
+NavigationDrawer.propTypes = {
+  drawerWidth: PropTypes.number,
+  openMobileDrawer: PropTypes.bool,
+  toggleDrawer: PropTypes.func,
+  onClickProfileAvatar: PropTypes.func,
+};

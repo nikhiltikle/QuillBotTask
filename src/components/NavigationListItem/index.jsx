@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -40,3 +41,10 @@ export default function NavigationListItem({
     </ListItem>
   );
 }
+
+NavigationListItem.propTypes = {
+  selected: PropTypes.bool,
+  disabled: PropTypes.bool,
+  icon: PropTypes.object,
+  title: PropTypes.string,
+};

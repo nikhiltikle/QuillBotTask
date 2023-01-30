@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -103,3 +104,13 @@ export default function Discover({
     </>
   );
 }
+
+Discover.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object),
+  onSearchMovie: PropTypes.func,
+  resetMovies: PropTypes.func,
+  openSearchField: PropTypes.bool,
+  setOpenSearchField: PropTypes.func,
+  setSelectedMovie: PropTypes.func,
+  selectedMovie: PropTypes.object,
+};

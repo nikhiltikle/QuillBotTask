@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Toolbar from '../Toolbar';
 import NavigationDrawer from '../NavigationDrawer';
@@ -22,3 +23,8 @@ export default function Navbar({ drawerWidth, onClickProfileAvatar }) {
     </Box>
   );
 }
+
+Navbar.propTypes = {
+  drawerWidth: PropTypes.number,
+  onClickProfileAvatar: PropTypes.func,
+};
