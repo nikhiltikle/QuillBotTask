@@ -2,9 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 
-import NavbarItems from '../NavbarItems';
+import NavigationList from '../NavigationList';
 
-export default function Navbar({
+export default function NavigationDrawer({
   drawerWidth,
   openMobileDrawer,
   toggleDrawer,
@@ -33,7 +33,7 @@ export default function Navbar({
           },
         }}
       >
-        <NavbarItems />
+        <NavigationList />
       </Drawer>
       <Drawer
         variant="permanent"
@@ -46,7 +46,7 @@ export default function Navbar({
         }}
         open
       >
-        <NavbarItems />
+        <NavigationList />
       </Drawer>
     </Box>
   );

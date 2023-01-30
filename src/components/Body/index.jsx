@@ -9,8 +9,12 @@ import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Grow } from '@mui/material';
+import { CleaningServicesOutlined } from '@mui/icons-material';
 
 export default function Body({ drawerWidth }) {
+  const [checked, setChecked] = React.useState(false);
+
   return (
     <Box
       component="main"
@@ -23,19 +27,39 @@ export default function Body({ drawerWidth }) {
       <Toolbar />
       <Grid container marginBottom="50px" marginTop="-15px">
         <Grid item xs={6}>
-          <TextField
-            label="With normal TextField"
-            fullWidth
-            InputProps={{
-              endAdornment: (
-                <InputAdornment>
-                  <IconButton>
-                    <SearchIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
+          {!checked ? (
+            <IconButton onClick={() => setChecked((prev) => !prev)}>
+              <SearchIcon />
+            </IconButton>
+          ) : (
+            <Grow
+              in={checked}
+              orientation="horizontal"
+              style={{ transformOrigin: '0 0 0' }}
+              {...(checked ? { timeout: 1000 } : {})}
+            >
+              <TextField
+                fullWidth
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment>
+                      <IconButton>
+                        <SearchIcon />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+
+                  endAdornment: (
+                    <InputAdornment>
+                      <IconButton onClick={() => setChecked((prev) => !prev)}>
+                        <CleaningServicesOutlined />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grow>
+          )}
         </Grid>
         <Grid
           display="flex"

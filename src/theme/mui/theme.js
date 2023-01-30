@@ -46,6 +46,12 @@ export const theme = createTheme({
     MuiListItemButton: {
       styleOverrides: {
         root: {
+          '& .MuiListItemText-primary': {
+            fontWeight: 600,
+            fontSize: '15px',
+            lineHeight: '247%',
+          },
+
           '&.Mui-disabled': {
             opacity: 1,
           },

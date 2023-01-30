@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Toolbar from './components/Toolbar';
+import Toolbar from '../Toolbar';
 import Box from '@mui/material/Box';
 
-import Navbar from './components/Navbar';
+import NavigationDrawer from '../NavigationDrawer';
 
-export default function SideNavbar({ drawerWidth }) {
+export default function Navbar({ drawerWidth }) {
   const [openMobileDrawer, setOpenMobileDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -14,7 +14,7 @@ export default function SideNavbar({ drawerWidth }) {
   return (
     <Box sx={{ display: 'flex' }}>
       <Toolbar drawerWidth={drawerWidth} toggleDrawer={toggleDrawer} />
-      <Navbar
+      <NavigationDrawer
         drawerWidth={drawerWidth}
         toggleDrawer={toggleDrawer}
         openMobileDrawer={openMobileDrawer}
