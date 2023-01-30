@@ -62,40 +62,39 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
         </Zoom>
       )}
       {movies.map((movie, index) => (
-        <>
-          <Card
-            id="movieCard"
-            sx={{
-              ...styles.mainCard,
-              order: index,
-              border:
-                selectedMovie?.imdbID === movie?.imdbID
-                  ? '3px solid #00E0FF'
-                  : '3px solid transparent',
-            }}
-            onClick={() => onSelectMovie(movie, index)}
-          >
-            <CardMedia
-              sx={styles.image}
-              image={movie.Poster}
-              title={movie.Title}
-            />
-            <CardContent sx={styles.cardContent}>
-              <Typography
-                sx={styles.contentTitle}
-                gutterBottom
-                variant="body1"
-                component="div"
-              >
-                {movie.Title}
-              </Typography>
-            </CardContent>
-            <CardActions sx={styles.cardActions}>
-              <PlayCircleOutlineIcon />
-              <ControlPointIcon />
-            </CardActions>
-          </Card>
-        </>
+        <Card
+          key={index}
+          id="movieCard"
+          sx={{
+            ...styles.mainCard,
+            order: index,
+            border:
+              selectedMovie?.imdbID === movie?.imdbID
+                ? '3px solid #00E0FF'
+                : '3px solid transparent',
+          }}
+          onClick={() => onSelectMovie(movie, index)}
+        >
+          <CardMedia
+            sx={styles.image}
+            image={movie.Poster}
+            title={movie.Title}
+          />
+          <CardContent sx={styles.cardContent}>
+            <Typography
+              sx={styles.contentTitle}
+              gutterBottom
+              variant="body1"
+              component="div"
+            >
+              {movie.Title}
+            </Typography>
+          </CardContent>
+          <CardActions sx={styles.cardActions}>
+            <PlayCircleOutlineIcon />
+            <ControlPointIcon />
+          </CardActions>
+        </Card>
       ))}
     </Box>
   );
