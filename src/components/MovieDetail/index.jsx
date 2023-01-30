@@ -1,14 +1,12 @@
 import React from 'react';
-import {
-  Box,
-  Card,
-  CardContent,
-  CardActions,
-  CardMedia,
-  Typography,
-  Button,
-  Stack,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 import { styles } from './styles';
 
@@ -23,48 +21,47 @@ export default function MovieDetail({
   imdbRating,
   sx,
 }) {
-  const classes = styles();
-  const cal = () => {
-    return (imdbRating / 10) * 100;
+  const getRating = () => {
+    return Number(imdbRating) ? (imdbRating / 10) * 100 : 0;
   };
 
   return (
     <Card
       sx={{
         ...sx,
-        ...classes.cardContainer,
+        ...styles.cardContainer,
       }}
     >
       <CardMedia
         component="img"
-        sx={classes.cardMedia}
+        sx={styles.cardMedia}
         image={images}
         alt="Live from space album cover"
       />
       <Box sx={{ width: '100%' }}>
         <Box sx={{ ml: 3 }}>
-          <CardContent sx={classes.cardContent}>
-            <Typography sx={classes.title} component="div" variant="h5">
+          <CardContent sx={styles.cardContent}>
+            <Typography sx={styles.title} component="div" variant="h5">
               {title}
             </Typography>
-            <Box sx={classes.ratingBarContainer}>
-              <Box sx={classes.ratingBarParent}>
+            <Box sx={styles.ratingBarContainer}>
+              <Box sx={styles.ratingBarParent}>
                 <Box
                   sx={{
-                    width: `${cal()}%`,
-                    ...classes.ratingBarChild,
+                    width: `${getRating()}%`,
+                    ...styles.ratingBarChild,
                   }}
                 />
               </Box>
-              <Typography>{`${cal() / 10}/10`}</Typography>
+              <Typography>{`${getRating() / 10}/10`}</Typography>
             </Box>
-            <Stack direction="row" rowGap={1} sx={classes.movieDetailContainer}>
+            <Stack direction="row" rowGap={1} sx={styles.movieDetailContainer}>
               <Box sx={{ mr: 2 }}>
                 <Typography
                   variant="subtitle1"
                   color="text.secondary"
                   component="div"
-                  sx={classes.movieDetailTypography}
+                  sx={styles.movieDetailTypography}
                 >
                   Year:
                 </Typography>

@@ -15,6 +15,8 @@ export default function Dashboard() {
   const [selectedMovie, setSelectedMovie] = useState({});
 
   const handleSearch = (event) => {
+    setSelectedMovie({});
+
     const filterData = movies.filter((f) => {
       if (event.target.value === '') return f;
       return f.Title.toLowerCase().includes(event.target.value.toLowerCase());

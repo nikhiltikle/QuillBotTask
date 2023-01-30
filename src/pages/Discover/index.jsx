@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grow from '@mui/material/Grow';
+
 import ClearIcon from '@mui/icons-material/Clear';
 import MovieList from '../../components/MovieList';
 import NotFound from '../../components/NotFound';

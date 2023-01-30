@@ -1,6 +1,4 @@
-import { styled } from '@mui/material';
-
-export const styles = () => ({
+export const styles = {
   mainCard: {
     height: 278,
     width: 176,
@@ -35,15 +33,7 @@ export const styles = () => ({
     pl: 1,
   },
   cardActions: {
-    p: 0,
+    paddingLeft: '8px',
     mt: 1,
   },
-});
-
-export const SvgCardButton = styled('button')({
-  backgroundColor: 'transparent',
-  color: 'white',
-  fontSize: '1rem',
-  border: 'none',
-  cursor: 'pointer',
-});
+};

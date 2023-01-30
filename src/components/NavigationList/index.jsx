@@ -13,6 +13,7 @@ import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+
 import NavigationListItem from '../NavigationListItem';
 import AvatarImage from '../../assets/images/avatar.svg';
 

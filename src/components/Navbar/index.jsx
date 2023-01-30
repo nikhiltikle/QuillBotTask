@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Toolbar from '../Toolbar';
 import Box from '@mui/material/Box';
-
+import Toolbar from '../Toolbar';
 import NavigationDrawer from '../NavigationDrawer';
 
 export default function Navbar({ drawerWidth, onClickProfileAvatar }) {

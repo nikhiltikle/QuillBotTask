@@ -8,15 +8,14 @@ import Zoom from '@mui/material/Zoom';
 import Typography from '@mui/material/Typography';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import { styles, SvgCardButton } from './styles';
+
 import MovieDetail from '../MovieDetail';
+import { styles } from './styles';
 
 const CARDS_GAP = 37;
 
 export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
   const [movieDetailOrder, setMovieDetailOrder] = useState(0);
-
-  const classes = styles();
 
   const calculateMovieDetailOrder = (index) => {
     const container = document.getElementById('moviesList');
@@ -67,7 +66,7 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
           <Card
             id="movieCard"
             sx={{
-              ...classes.mainCard,
+              ...styles.mainCard,
               order: index,
               border:
                 selectedMovie?.imdbID === movie?.imdbID
@@ -77,13 +76,13 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
             onClick={() => onSelectMovie(movie, index)}
           >
             <CardMedia
-              sx={classes.image}
+              sx={styles.image}
               image={movie.Poster}
               title={movie.Title}
             />
-            <CardContent sx={classes.cardContent}>
+            <CardContent sx={styles.cardContent}>
               <Typography
-                sx={classes.contentTitle}
+                sx={styles.contentTitle}
                 gutterBottom
                 variant="body1"
                 component="div"
@@ -91,14 +90,9 @@ export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
                 {movie.Title}
               </Typography>
             </CardContent>
-            <CardActions sx={classes.cardActions}>
-              <SvgCardButton>
-                <PlayCircleOutlineIcon />
-              </SvgCardButton>
-
-              <SvgCardButton>
-                <ControlPointIcon />
-              </SvgCardButton>
+            <CardActions sx={styles.cardActions}>
+              <PlayCircleOutlineIcon />
+              <ControlPointIcon />
             </CardActions>
           </Card>
         </>

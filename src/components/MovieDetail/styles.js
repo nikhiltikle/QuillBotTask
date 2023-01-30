@@ -1,4 +1,4 @@
-export const styles = () => ({
+export const styles = {
   cardContainer: {
     display: 'flex',
     width: '100%',
@@ -53,4 +53,4 @@ export const styles = () => ({
     lineHeight: '31px',
     color: '#D4D7DD',
   },
-});
+};
