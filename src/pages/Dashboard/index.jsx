@@ -12,6 +12,7 @@ const DRAWER_WIDTH = 275;
 export default function Dashboard() {
   const [moviesData, setMoviesData] = useState(movies);
   const [openSearchField, setOpenSearchField] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState({});
 
   const handleSearch = (event) => {
     const filterData = movies.filter((f) => {
@@ -25,6 +26,7 @@ export default function Dashboard() {
   const resetData = () => {
     setMoviesData(movies);
     setOpenSearchField(false);
+    setSelectedMovie({});
   };
   return (
     <Box display="flex">
@@ -37,6 +39,8 @@ export default function Dashboard() {
           resetMovies={resetData}
           openSearchField={openSearchField}
           setOpenSearchField={setOpenSearchField}
+          setSelectedMovie={setSelectedMovie}
+          selectedMovie={selectedMovie}
         />
       </Body>
     </Box>

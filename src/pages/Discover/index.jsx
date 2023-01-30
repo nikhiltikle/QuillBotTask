@@ -18,6 +18,8 @@ export default function Discover({
   resetMovies,
   openSearchField,
   setOpenSearchField,
+  setSelectedMovie,
+  selectedMovie,
 }) {
   const onCancelSearch = () => {
     setOpenSearchField(false);
@@ -89,7 +91,11 @@ export default function Discover({
       </Grid>
 
       {Boolean(movies.length) ? (
-        <MovieList movies={movies} />
+        <MovieList
+          movies={movies}
+          setSelectedMovie={setSelectedMovie}
+          selectedMovie={selectedMovie}
+        />
       ) : (
         <NotFound>No results found for your search.</NotFound>
       )}

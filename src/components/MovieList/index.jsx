@@ -13,8 +13,7 @@ import MovieDetail from '../MovieDetail';
 
 const CARDS_GAP = 37;
 
-export default function MovieList({ movies }) {
-  const [selectedMovie, setMovie] = useState({});
+export default function MovieList({ movies, setSelectedMovie, selectedMovie }) {
   const [movieDetailOrder, setMovieDetailOrder] = useState(0);
 
   const classes = styles();
@@ -34,7 +33,7 @@ export default function MovieList({ movies }) {
 
   const onSelectMovie = (movie, index) => {
     calculateMovieDetailOrder(index);
-    setMovie(movie);
+    setSelectedMovie(movie);
   };
 
   return (
@@ -67,7 +66,14 @@ export default function MovieList({ movies }) {
         <>
           <Card
             id="movieCard"
-            sx={{ ...classes.mainCard, order: index }}
+            sx={{
+              ...classes.mainCard,
+              order: index,
+              border:
+                selectedMovie?.imdbID === movie?.imdbID
+                  ? '3px solid #00E0FF'
+                  : '3px solid transparent',
+            }}
             onClick={() => onSelectMovie(movie, index)}
           >
             <CardMedia

@@ -10,7 +10,7 @@ export const styles = () => ({
     cursor: 'pointer',
   },
   image: {
-    height: '100%',
+    height: 188,
     width: 157,
     margin: 1,
     borderRadius: '6px',
