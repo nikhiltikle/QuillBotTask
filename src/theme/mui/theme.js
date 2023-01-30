@@ -43,5 +43,27 @@ export const theme = createTheme({
         },
       },
     },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          '&.Mui-disabled': {
+            opacity: 1,
+          },
+
+          '&.Mui-selected': {
+            color: '#00E0FF',
+            backgroundColor: 'transparent',
+
+            '& .MuiSvgIcon-root': {
+              color: '#00E0FF',
+            },
+
+            '& .MuiListItemText-primary': {
+              color: '#00E0FF',
+            },
+          },
+        },
+      },
+    },
   },
 });

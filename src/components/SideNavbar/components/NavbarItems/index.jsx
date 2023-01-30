@@ -61,29 +61,25 @@ export default function NavbarItems() {
       <Divider />
       <List>
         {list1.map((list, index) => (
-          <ListItem
-            key={index}
-            disablePadding
-            selected={index === 0}
-            sx={{
-              '&.Mui-selected': {
-                color: 'blue',
-                backgroundColor: 'unset',
-              },
-            }}
-          >
-            <ListItemButton sx={{ marginLeft: '36px' }}>
+          <ListItem key={index} disablePadding>
+            <ListItemButton
+              selected={index === 0}
+              disabled={index !== 0}
+              sx={{
+                paddingLeft: '36px',
+                ':before': index === 0 && {
+                  position: 'absolute',
+                  right: 0,
+                  content: '""',
+                  height: '100%',
+                  width: '4px',
+                  backgroundColor: '#00E0FF',
+                },
+              }}
+            >
               <ListItemIcon>{list.component}</ListItemIcon>
               <ListItemText primary={list.name} />
             </ListItemButton>
-            {/* <Box
-              sx={{
-                backgroundColor: 'blue',
-                width: '6px',
-                height: '33px',
-                marginRight: '-4px',
-              }}
-            ></Box> */}
           </ListItem>
         ))}
       </List>
@@ -91,7 +87,7 @@ export default function NavbarItems() {
       <List>
         {list2.map((list, index) => (
           <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ marginLeft: '36px' }}>
+            <ListItemButton disabled sx={{ paddingLeft: '36px' }}>
               <ListItemIcon>{list.component}</ListItemIcon>
               <ListItemText primary={list.name} />
             </ListItemButton>
@@ -103,7 +99,7 @@ export default function NavbarItems() {
       <List>
         {list3.map((list, index) => (
           <ListItem key={list.name} disablePadding>
-            <ListItemButton sx={{ marginLeft: '36px' }}>
+            <ListItemButton disabled sx={{ paddingLeft: '36px' }}>
               <ListItemIcon>{list.component}</ListItemIcon>
               <ListItemText primary={list.name} />
             </ListItemButton>
