@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/QuillBotTask/static/js/main.da5bb736.js",
-    "static/media/avatar.svg": "/QuillBotTask/static/media/avatar.5004a88509e995229d33a3128d287eb9.svg",
-    "index.html": "/QuillBotTask/index.html",
-    "main.da5bb736.js.map": "/QuillBotTask/static/js/main.da5bb736.js.map"
+    "main.js": "/QuillBot_FE_Task/static/js/main.7c8a5944.js",
+    "static/media/avatar.svg": "/QuillBot_FE_Task/static/media/avatar.5004a88509e995229d33a3128d287eb9.svg",
+    "index.html": "/QuillBot_FE_Task/index.html",
+    "main.7c8a5944.js.map": "/QuillBot_FE_Task/static/js/main.7c8a5944.js.map"
   },
   "entrypoints": [
-    "static/js/main.da5bb736.js"
+    "static/js/main.7c8a5944.js"
   ]
 }
